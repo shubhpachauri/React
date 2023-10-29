@@ -1,0 +1,38 @@
+Case Study Document: HTML5, CSS3, JavaScript, ReactJS 
+
+ 
+
+1. Introduction 
+
+ 
+
+1.1 Purpose 
+
+ 
+
+The purpose of this case study is to demonstrate validation of UI using HTML5, JavaScript & React. Also, the purpose is to learn CSS3 decorations. 
+
+ 
+
+1.2 Technologies Used 
+
+ 
+
+- HTML5 
+
+- CSS3 
+
+- JavaScript 
+
+- ReactJS 
+
+- VSCode as IDE 
+
+ 
+
+2. Business Scenario 
+ 
+The assignment is based on a scenario where a cooking training company requires a web application to manage user data. 
+The data consists of users' basic information, such as name, email, and date of birth, speciality of cuisine (can be multivalue) & other 
+details you can imagine. Form should be properly validated like fields not being empty, date of birth must be indicating at least 18 years of age & any other validations you can assume. 
+There should be login page, below which it should render registration form upon clicking Register button. Use appropriate decoration through CSS3, Bootstrap etc. 
