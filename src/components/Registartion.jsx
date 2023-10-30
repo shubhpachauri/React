@@ -9,21 +9,27 @@ export default function Registartion() {
     const [isDobValid, setIsDobValid] = useState(true);
 
     const handleDateChange = (event) => {
-      console.log("nisdjisjdisjd")
+      console.log("sdjsd")
       const enteredDob = event.target.value;
       setDob(enteredDob);
-     
+      var dateValidate = document.getElementById("validationCustom03");
   
       // Custom validation for Date of Birth
       const currentDate = new Date();
       const dobDate = new Date(enteredDob);
       const age = currentDate.getFullYear() - dobDate.getFullYear();
-      console.log(age);
+
       if (enteredDob === '' || age < 18) {
+
         setIsDobValid(false);
+        dateValidate.classList.add("is-invalid");
+        return false;
       } else {
        
         setIsDobValid(true);
+        {dateValidate.classList.replace("is-invalid","is-valid");}
+        {dateValidate.classList.add("is-valid")}
+        return true;
       }
     };  
   
@@ -33,8 +39,12 @@ export default function Registartion() {
     };
   
     const handleSubmit = (event) => {
+      var custineValidate = document.getElementById("validationServer04");
       event.preventDefault();
-      handleDateChange();
+     if(!handleDateChange())
+     {
+      return; 
+     }
       if( event.target.value == "") 
       {
         setIsDobValid(false);
@@ -42,6 +52,8 @@ export default function Registartion() {
       }
       if (selectedCusine.length === 0) {
         setIsCusineValid(false);
+        custineValidate.classList.add("is-valid");
+        // ${isCusineValid ? 'is-valid' : 'is-invalid'}
         return;
       } else {
         setIsCusineValid(true); 
@@ -134,7 +146,7 @@ export default function Registartion() {
 
     <div class="col-md-3">
     <label for="validationServer04" class="form-label">Type Of Cusine</label>
-    <select class={`form-control ${isCusineValid ? 'is-valid' : 'is-invalid'}`} id="validationServer04" aria-describedby="validationServer04Feedback" multiple required>
+    <select class={`form-control`} id="validationServer04" aria-describedby="validationServer04Feedback" multiple required>
       <option selected disabled >Choose...</option>
       <option value="northIndian">North Indian</option>
       <option value="southIndian">South Indian</option>
